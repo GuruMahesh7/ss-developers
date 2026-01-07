@@ -40,6 +40,17 @@ const Contact = () => {
                                 </div>
                             </div>
 
+                            <div className="flex items-start gap-6">
+                                <div className="p-4 rounded-full bg-white/5 border border-white/10 text-brand-gold">
+                                    <Mail size={24} />
+                                </div>
+                                <div>
+                                    <h4 className="text-xl font-bold mb-1">Email Us</h4>
+                                    <p className="text-slate-400">sagarnilesh36@gmail.com</p>
+                                    <p className="text-slate-400">We reply within 24 hours</p>
+                                </div>
+                            </div>
+
                             {/* Map Placeholder */}
                             <div className="mt-8 h-48 w-full bg-slate-800 rounded-2xl overflow-hidden border border-white/10 relative group">
                                 <iframe
@@ -59,10 +70,18 @@ const Contact = () => {
                     {/* Contact Form */}
                     <div className="bg-white rounded-3xl p-8 md:p-12 text-slate-800 shadow-2xl">
                         <h3 className="text-3xl font-serif font-bold mb-8">Send Message</h3>
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-6" onSubmit={(e) => {
+                            e.preventDefault();
+                            const formData = new FormData(e.target);
+                            const data = Object.fromEntries(formData.entries());
+                            const text = `*New Inquiry from Website*%0A%0A*Name:* ${data.name}%0A*Phone:* ${data.phone}%0A*Project:* ${data.project}%0A*Message:* ${data.message}`;
+                            // Using the placeholder number for now as no specific WhatsApp number was provided
+                            window.open(`https://wa.me/919876543210?text=${text}`, '_blank');
+                        }}>
                             <div>
                                 <label className="block text-sm font-semibold mb-2">Full Name</label>
                                 <input
+                                    name="name"
                                     type="text"
                                     className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all"
                                     placeholder="John Doe"
@@ -72,6 +91,7 @@ const Contact = () => {
                             <div>
                                 <label className="block text-sm font-semibold mb-2">Phone Number</label>
                                 <input
+                                    name="phone"
                                     type="tel"
                                     className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all"
                                     placeholder="+91 00000 00000"
@@ -80,24 +100,25 @@ const Contact = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold mb-2">Project Interest</label>
-                                <select className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all">
+                                <select name="project" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all">
                                     <option value="">Select a Project</option>
-                                    <option>Sri Harivasam</option>
-                                    <option>Godavari Gardens</option>
-                                    <option>Kaveri Avenues</option>
-                                    <option>General Inquiry</option>
+                                    <option value="Sri Harivasam">Sri Harivasam</option>
+                                    <option value="Godavari Gardens">Godavari Gardens</option>
+                                    <option value="Kaveri Avenues">Kaveri Avenues</option>
+                                    <option value="General Inquiry">General Inquiry</option>
                                 </select>
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold mb-2">Message</label>
                                 <textarea
+                                    name="message"
                                     rows="4"
                                     className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all"
                                     placeholder="How can we help you?"
                                 ></textarea>
                             </div>
                             <button type="submit" className="w-full py-4 bg-brand-gold text-white font-bold rounded-lg hover:bg-yellow-600 transition-colors shadow-lg hover:shadow-brand-gold/30 transform active:scale-95">
-                                Submit Request
+                                Send via WhatsApp
                             </button>
                         </form>
                     </div>

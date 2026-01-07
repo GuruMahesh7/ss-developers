@@ -9,25 +9,25 @@ const services = [
         icon: Home,
         title: 'Residential Construction',
         description: 'We build dream homes with precision engineering and premium materials, ensuring longevity and aesthetic appeal.',
-        image: 'https://images.unsplash.com/photo-1590274751460-316226f343a4?auto=format&fit=crop&q=80&w=800'
+        image: '/service-residential.png'
     },
     {
         icon: PaintBucket,
         title: 'Interior Design',
         description: 'Our expert interior designers transform spaces into functional works of art, tailored to your lifestyle and preferences.',
-        image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
+        image: '/service-interior.png'
     },
     {
         icon: Ruler,
         title: 'Architectural Planning',
         description: 'Comprehensive architectural planning and 3D modeling services to visualize your project before construction begins.',
-        image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800'
+        image: '/service-planning.png'
     },
     {
         icon: ShieldCheck,
         title: 'Vastu Consultation',
         description: 'Expert Vastu Shastra consultation to ensure your home brings prosperity, health, and happiness to your family.',
-        image: 'https://images.unsplash.com/photo-1596564639918-a6125032540b?auto=format&fit=crop&q=80&w=800'
+        image: '/service-vastu.png'
     }
 ];
 

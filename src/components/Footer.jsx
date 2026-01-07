@@ -19,7 +19,7 @@ const Footer = () => {
                             <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-brand-gold hover:text-white transition-colors">
                                 <Facebook size={20} />
                             </a>
-                            <a href="https://www.instagram.com/ss.developers1/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-brand-gold hover:text-white transition-colors">
+                            <a href="https://www.instagram.com/ss.developers1/?igsh=ZnB1ems0Y3FhNWNj#" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-brand-gold hover:text-white transition-colors">
                                 <Instagram size={20} />
                             </a>
                             <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-brand-gold hover:text-white transition-colors">
